@@ -1,0 +1,40 @@
+footer{
+    background-color: rgba(0, 0, 0, 0.788);
+    color: white;
+    padding-bottom: 30px;
+    width: 100%; 
+    padding-left: 20px;
+    h3{
+        @include police-titre;
+        font-weight:lighter;
+        padding: 30px 0;
+        margin: 0%;
+    }
+    .bloc-icone{
+        display: flex;
+        flex-direction: column;
+        &__icone{
+            display:flex;
+            align-items: center;
+            font-weight: bold;
+            height: 25px;
+            i{
+                display:flex;
+                width: 25px;
+                font-size: 14px;
+            }
+        } 
+    }
+    .bloc-text{
+            padding: 5px 0;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+        }
+}
+@media all and(min-width: 993px){ 
+.footer--accueil{
+        padding-left: 15%;
+    }
+}

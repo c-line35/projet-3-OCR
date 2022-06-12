@@ -1,0 +1,97 @@
+
+.purple-heart{
+    color: $color-primary;
+}
+.pink-heart{
+    color: $color-secondary;
+}
+.green-heart{
+    color: $color-tertiary;
+}
+$num-hearts: 9;
+$anim-dur: 1500ms;
+$anim-delay: $anim-dur / $num-hearts;
+body{
+    position: relative;
+}
+main{
+    opacity:(0);
+    animation: main-loader 1s 3000ms forwards;
+}
+@keyframes main-loader{
+    0%{
+        opacity:(0);
+    }
+    100%{
+        opacity:(1);
+    }
+}
+.contain{
+    position: fixed;
+    left:20%;
+    right: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px; 
+    opacity: 0;
+    animation: loader 3000ms;
+    p{
+        @include police-titre;
+        @include heart-linear-gradient;
+        text-align: center;
+    }  
+    img{
+            width: 200px;
+        }
+}
+@keyframes loader{
+    0%{
+        opacity: 1;
+    }
+      
+    99%{
+        opacity: 1;
+    }
+    100%{
+        opacity: (0);
+    }
+}
+.load{
+    display: flex;
+    justify-content: space-between;
+    &__heart{
+        opacity:0;
+        animation: heart $anim-dur reverse  ease-in 2;
+        @for $i from 1 through $num-hearts {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i + random(100)*15ms;
+                transform: translateX(($i - 5) * 10px) translateY(-200px) scale(2) rotate(($i - 5) * 10deg);
+                }
+            }             
+        }
+        
+    }
+@keyframes heart {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) translateY(0) scale(0.5);
+        opacity: 1;
+    }
+}
+@media all and(min-width: 760px){
+    .contain{
+        position: fixed;
+        left: 35%;
+        right: 35%;
+        top: 25%;
+        img{
+            width: 500px;
+        }
+    }
+    .load{
+        width: 300px;
+    }
+}

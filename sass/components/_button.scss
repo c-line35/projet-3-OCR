@@ -1,0 +1,23 @@
+.btn{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+
+}
+button{
+    background: linear-gradient(-10deg, $color-primary, $color-secondary);
+    color:white;
+    border:transparent;
+    border-radius: 40px;
+    width:230px;
+    height: 50px;
+    font-size:16px;
+    padding: 10px;
+    margin-bottom: 50px;
+    @include police-text;
+    @include box-shadow-normal;
+    &:hover{
+        @include bg-color-btn-hoover;
+        @include box-shadow-hover;
+    }
+}

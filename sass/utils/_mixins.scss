@@ -1,0 +1,24 @@
+@mixin police-text{
+    font-family: "Roboto", cursive;
+}
+@mixin police-titre{
+    font-family: 'Shrikhand', cursive;
+}
+@mixin bg-color-btn-hoover{
+    background: linear-gradient(-10deg, $color-primary-light, $color-secondary-light);
+}
+@mixin box-shadow-normal{
+    box-shadow: 0px 5px 7px 0px rgb(219, 219, 219);
+}
+@mixin box-shadow-hover{
+    box-shadow: 0px 8px 7px 0px rgb(170, 170, 170);
+}
+@mixin heart-linear-gradient{
+    background: linear-gradient(225deg, $color-primary, $color-secondary);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+      
+

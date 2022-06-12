@@ -1,0 +1,192 @@
+.localisation{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0px 5px 5px 0px rgb(219, 219, 219) inset;
+    i{
+        margin: auto 10px;
+    }
+}
+.presentation{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-bg-bloc;
+    h1{
+        text-align: center;
+        font-size: 25px;
+        padding: 0 50px 0 50px;
+    }
+    p{
+        text-align: center;
+        font-size: 20px;
+    }
+}
+.fonctionnement{
+   display:flex;
+   flex-direction: column;
+   margin-bottom: 40px;
+   h1{
+       font-size: 25px;
+       margin-left: 30px;
+   }
+   &__check{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+}
+.checking{
+    display:flex;
+    align-items: center;
+    width: 300px;
+    height: 70px;
+    margin-bottom: 20px;
+    background-color: $color-bg-bloc;
+    border-radius: 15px;
+    @include box-shadow-normal;
+    font-size:16px;
+    &__number{
+        display:flex;
+        justify-content: center ;
+        align-items: center;
+        background-color: $color-primary;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-left: -10px;
+        color:white;
+    }
+    i{
+        color: grey;
+        margin: auto 20px;
+    }
+    &__phrase{
+        font-weight:bold;
+    }
+    &:hover{
+        background-color: lighten($color-primary, 35%);
+        i{
+            color:$color-primary;
+        }
+    }
+}
+.restaurants{
+    display:flex;
+    flex-direction: column;
+    background-color: $color-bg-bloc;
+    padding-top: 40px;
+    h1{
+        font-size: 25px;
+        margin-left: 30px;
+    }
+    .card-bloc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.card-restaurants{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:calc(100% - 40px);
+    max-width: 400px;
+    height: 250px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    @include box-shadow-normal;
+    img{
+        width: 100%;
+        height: 170px;
+        object-fit:cover;
+        border-radius: 10px 10px 0 0;
+    }
+    a{
+        width: 100%;
+        height: 200px; 
+        text-decoration: none;
+        color:black;
+    }
+    &__text{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 18px;
+        padding: 15px;
+        &__name{
+                font-weight: bold;
+        }
+    }   
+}
+.nouveau{
+    position: absolute;
+    bottom: 210px;
+    left: 75%;
+    background-color: $color-tertiary;
+    color: darken($color-tertiary, 35%);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 8px;
+}
+@media all and (max-width:992px) and (min-width:769px){
+    .fonctionnement__check{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .checking{
+        max-width: 230px;
+    }
+    .restaurants{
+        .card-bloc{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        }
+    }
+    .card-restaurants{
+    width: calc(50% - 20px);
+    max-width: 350px;
+    }
+}
+@media all and(min-width: 993px){ 
+    .fonctionnement{
+        padding: 0 15%;
+        margin: 30px 0;
+        h1{
+            margin-left: 0;
+        }
+    }
+    .fonctionnement__check{
+       flex-direction: row;
+       justify-content: space-between;
+    }
+    .checking{
+        width: calc(33% - 20px);
+        max-width: 400px;
+        &__phrase{
+            padding-right: 10px;
+        }
+    }
+    .restaurants{
+        padding: 0 15%;
+        h1{
+            margin-left: 0;
+        }
+        .card-bloc{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+    .card-restaurants{
+        width: calc(50% - 60px);
+        max-width: 600px;
+        margin-bottom: 60px;
+    }
+}
